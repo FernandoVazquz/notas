@@ -33,7 +33,7 @@
 
                             <button 
                                 class="bg-blue-500 hover:bg-blue-700 text-white font-blod py-2 px-4 rounded-md"
-                                >Aceptar</button>
+                                >Crear</button>
                         </form>
                     </div>
                 </div>

@@ -70,7 +70,7 @@ class NotaController extends Controller
      */
     public function show($id)
     {
-        $nota = Nota::where('id', $id())->where('users_id', Auth::id())->first();
+        $nota = Nota::where('id', $id)->where('users_id', Auth::id())->first();
 
         return Inertia::render('Notas/Show', [
             'nota' => $nota
@@ -85,7 +85,7 @@ class NotaController extends Controller
      */
     public function edit($id)
     {
-        $nota = Nota::where('id', $id())->where('users_id', Auth::id())->first();
+        $nota = Nota::where('id', $id)->where('users_id', Auth::id())->first();
 
         return Inertia::render('Notas/Edit', [
             'nota' => $nota
@@ -107,7 +107,7 @@ class NotaController extends Controller
             'contenido' => 'required',
         ]);
         
-        $nota = Nota::where('id', $id())->where('users_id', Auth::id())->first();
+        $nota = Nota::where('id', $id)->where('users_id', Auth::id())->first();
 
         $nota->update($request->all());
         return redirect()->route('noticias.index')->with('status', 'La noticia se ha actualizado.');
@@ -122,7 +122,7 @@ class NotaController extends Controller
      */
     public function destroy($id)
     {
-        $nota =  Nota::where('id',$id)->where('users_id',Auth::id())->first();
+        $nota = Nota::where('id', $id)->where('users_id', Auth::id())->first();
 
         $nota->delete();
         return redirect()->route('noticias.index')->with('status','La noticia se ha eliminado');;
