@@ -1,48 +1,51 @@
 <template>
-    <app-layout title = "Dashboard">
-            <template #header>
-                <h2 class = "font-semibold text-xl text-gray-800 leading-tight">
-                    Editar noticias
-                </h2>
-            </template>
+    <app-layout title="Dashboard">
+        <template #header>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                Editar nota
+            </h2>
+        </template>
 
-            <div class= "py-12">
-                <div class = "max-w-7x1 mx-auto sm:px-6 lg:px-8">
-                    <div class = "bg-white overflow-hidden shadow-xl sm:rounded-lg">
+        <div class="py-12">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
-                        <form @submit.prevent="update">
+                    <form @submit.prevent="update">
 
-                            <label class="block font-medium text-sm text-gray-700">
-                                Título
-                            </label>
+                        <label class="block font-medium text-sm text-gray-700">
+                            Título
+                        </label>
 
-                            <textarea 
-                                class="form-input w-full rounded-md shadow-sm"
-                                v-model="form.titulo"
-                            ></textarea>
+                        <textarea 
+                            class="form-input w-full rounded-md shadow-sm"
+                            v-model="form.titulo"
+                        ></textarea>
 
-                            <label class="block font-medium text-sm text-gray-700">
-                                Contenido
-                            </label>
-                            
-                            <textarea
-                                class="form-input w-full rounded-md shadow-sm"
-                                v-model="form.contenido"
-                                rows="8"
-                            ></textarea>
+                        <label class="block font-medium text-sm text-gray-700">
+                            Contenido
+                        </label>
 
-                            <button 
-                                class="bg-blue-500 hover:bg-blue-700 text-white font-blod py-2 px-4 rounded-md"
-                                >Aceptar</button>
-                        </form>
+                        <textarea 
+                            class="form-input w-full rounded-md shadow-sm"
+                            v-model="form.contenido"
+                            rows="8"
+                        ></textarea>
 
-                        <br><br><br><br>
+                        <button 
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md"
+                        >Editar</button>
+                        
+                    </form>
 
-                        <button @click.prevent="eliminar()" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md">Eliminar registro</button>
+                    <br> 
 
-                    </div>
+                    <button @click.prevent="eliminar()" 
+                        class="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md"
+                    >Eliminar registro</button>
+
                 </div>
             </div>
+        </div>
     </app-layout>
 </template>
 
@@ -53,25 +56,25 @@
     export default defineComponent({
         components: {
             AppLayout,
-        }, 
+        },
         props: {
             nota: Object,
         },
         data () {
-            return{
+            return {
                 form: {
                     titulo: this.nota.titulo,
-                    contenido: this.nota.contenido
+                    contenido: this.nota.contenido,
                 }
             }
         },
         methods: {
-            update(){
+            update () {
                 this.$inertia.put(this.route('noticias.update', this.nota.id), this.form)
             },
-            eliminar(){
-                if( confirm('¿Estas seguro de eliminar esta registro?') ){
-                    this.$inertia.delete(this.route('noticias.destroy', this.nota.id))
+            eliminar() {
+                if(confirm("¿Estas seguro de eliminar este registro?")) {
+                this.$inertia.delete(this.route('noticias.destroy', this.nota.id))
                 }
             }
         }

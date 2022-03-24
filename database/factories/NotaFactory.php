@@ -14,8 +14,8 @@ class NotaFactory extends Factory
     public function definition()
     {
         return [
-            'titulo' => $this -> faker -> text(140), 
-            'contenido' => $this -> faker -> text(140), 
+            'titulo' => $this->faker->text(140),
+            'contenido' => $this->faker->text(140),
         ];
     }
 }

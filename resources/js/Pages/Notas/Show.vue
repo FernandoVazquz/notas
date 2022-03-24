@@ -1,28 +1,27 @@
 <template>
-    <app-layout title = "Dashboard">
-            <template>
-                <h2 class = "font-semibold text-xl text-gray-800 leading-tight">
-                    Ver noticias
-                </h2>
-            </template>
+    <app-layout title="Dashboard">
+        <template #header>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                Ver noticia
+            </h2>
+        </template>
 
-            <div class= "py-12">
-                <div class = "max-w-7x1 mx-auto sm:px-6 lg:px-8">
-                    <div class = "bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                        <inertia-link :href="route('noticias.edit', nota.id)">
-                            Editar
-                        </inertia-link>
-                        <hr>
+        <div class="py-12">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
-                        <p>Titulo</p>
-                        <p>{{nota.titulo}}</p>
+                    <inertia-link :href="route('noticias.edit', nota.id)">
+                        Editar
+                    </inertia-link>
+                    <hr>
 
-                        <p>Contenido</p>
-                        <p>{{nota.contenido}}</p>
-
-                    </div>
+                    <p>Titulo</p>
+                        <p>{{ nota.titulo }}</p>
+                    <p>Contenido</p>
+                        <p>{{ nota.contenido }}</p>
                 </div>
             </div>
+        </div>
     </app-layout>
 </template>
 
