@@ -24,7 +24,7 @@
                                     ></textarea>
 
                                     <label class="block font-medium text-sm text-gray-700">
-                                        Contenido
+                                        Estatus
                                     </label>
 
                                     <textarea 
