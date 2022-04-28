@@ -51,10 +51,15 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show($id)
     {
-        //
+        $category = category::findOrFail($id);
+
+        return Inertia::render('Categorias/Show', [
+            'category' => $category
+        ]); 
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -62,9 +67,13 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit( $id)
     {
-        //
+        $category = category::findOrFail($id);
+
+        return Inertia::render('Categorias/Edit', [
+            'category' => $category
+        ]); 
     }
 
     /**
@@ -74,9 +83,13 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, $id)
     {
-        //
+        $categorias = Category::findOrFail($id);
+
+        $category->update($request->all());
+
+        return redirect()->route('categorias.index')->with('status', 'La categoria se actualizo');
     }
 
     /**
