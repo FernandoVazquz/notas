@@ -30,13 +30,28 @@
                                 v-model="form.contenido"
                                 rows="8"
                             ></textarea>
-                         </div>
-                          <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
+
+                            <label class="block font-medium text-sm text-gray-700">
+                                Categoría
+                            </label>
+
+                            <select v-model="form.categories_id" class="form-input w-full rounded-md shadow-sm">
+                                <option value="">Seleccionar</option>
+                                <option :value="category.id" v-for="category in categories" :key="category.id">
+                                    {{category.category_name}}
+                                </option>
+                            </select>
+
+                        </div>
+
+                        <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
+                            
                             <button
                                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md"
                             >Aceptar</button>
                             <button @click.prevent="destroy" class="float-right bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md">Eliminar</button>
-                          </div>
+                          
+                        </div>
 						
 						
                     </div>
@@ -56,13 +71,15 @@
             AppLayout,
         },
         props: {
-            nota: Object
+            nota: Object,
+            categories: Array
         },
         data () {
             return {
                 form: {
                     titulo: this.nota.titulo,
-                    contenido: this.nota.contenido
+                    contenido: this.nota.contenido,
+                    categories_id: this.nota.categories_id,
                 }
             }
         },

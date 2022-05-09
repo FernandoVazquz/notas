@@ -16,23 +16,25 @@
                                 Categoria
                             </label>
 
-                            <input type = "text" v-model="form.category_name" class="form-input w-full rounded-md shadow-sm">
-
+                            <input type="text" v-model="form.category_name" class="form-input w-full rounded-md shadow-sm">
 
                             <label class="block font-medium text-sm text-gray-700">
                                 Estatus
                             </label>
 
-                            <select v-model="form.category_status" lass="form-input w-full rounded-md shadow-sm">
-                                <option value = 1>Enabled</option>
-                                <option value = 0>Disabled</option>
+                            <select v-model="form.category_status" class="form-input w-full rounded-md shadow-sm">
+                                <option value=1>Enabled</option>
+                                <option value=0>Disabled</option>
                             </select>
+
                          </div>
 
                           <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
+                            
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">
                                 Aceptar
                             </button>
+
                           </div>
 						
 						

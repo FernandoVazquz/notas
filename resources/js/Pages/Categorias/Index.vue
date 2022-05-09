@@ -32,16 +32,19 @@
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
+
                             <tr v-for="categoria in categorias" :key="categoria.id">
+
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                     {{categoria.category_name}}
                                 </td>
+
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                    {{categoria.category_status}}
                                     <span v-if="categoria.category_status == 1">Enabled</span>
-                                    <span v-if="0">Disabled</span>
+                                    <span v-else>Disabled</span>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+
+                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                     <inertia-link :href="route('categorias.show',categoria.id)" class="text-blue-600 hover:text-blue-900 mb-2 mr-2">
                                         Ver
                                     </inertia-link>

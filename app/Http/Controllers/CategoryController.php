@@ -53,11 +53,11 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        $category = category::findOrFail($id);
+        $category =  Category::findOrFail($id);
 
-        return Inertia::render('Categorias/Show', [
+         return Inertia::render('Categorias/Show', [
             'category' => $category
-        ]); 
+        ]);
     }
 
 
@@ -69,11 +69,11 @@ class CategoryController extends Controller
      */
     public function edit( $id)
     {
-        $category = category::findOrFail($id);
+        $category =  Category::findOrFail($id);
 
-        return Inertia::render('Categorias/Edit', [
+         return Inertia::render('Categorias/Edit', [
             'category' => $category
-        ]); 
+        ]);
     }
 
     /**
@@ -85,11 +85,10 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $categorias = Category::findOrFail($id);
-
+        $category = Category::findOrFail($id);
         $category->update($request->all());
 
-        return redirect()->route('categorias.index')->with('status', 'La categoria se actualizo');
+        return redirect()->route('categorias.index')->with('status','La categoría se ha actualizado');
     }
 
     /**

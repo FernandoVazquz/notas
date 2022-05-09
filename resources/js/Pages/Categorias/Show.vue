@@ -21,12 +21,12 @@
                         <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg p-10">
 						
                             <div class="min-w-full divide-y divide-gray-200 w-full">
-                            <b>Categoria</b>
+                            <b>Categoría</b>
                             <p>{{ category.category_name }}</p>
 
                             <b>Estatus</b>
-                                <span v-if="categoria.category_status == 1">Enabled</span>
-                                <span v-if="0">Disabled</span>
+                                <p v-if="category.category_status == 1">Enabled</p>
+                                <p v-else>Disabled</p>
                             </div>
                             
                         </div>
@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="block mt-8">
-                 <inertia-link :href="route('noticias.index')"
+                 <inertia-link :href="route('categorias.index')"
                         class="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded"
                     >
                         Categorias
