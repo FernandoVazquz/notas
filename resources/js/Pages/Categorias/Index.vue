@@ -44,7 +44,7 @@
                                     <span v-else>Disabled</span>
                                 </td>
 
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                     <inertia-link :href="route('categorias.show',categoria.id)" class="text-blue-600 hover:text-blue-900 mb-2 mr-2">
                                         Ver
                                     </inertia-link>

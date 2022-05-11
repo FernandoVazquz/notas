@@ -25,8 +25,8 @@
                                     </label>
 
                                     <select v-model="form.category_status" class="form-input w-full rounded-md shadow-sm">
-                                        <option value=1>Enabled</option>
-                                        <option value=0>Disabled</option>
+                                            <option value=1>Enabled</option>
+                                            <option value=0>Disabled</option>
                                     </select>
                                     
                                     <button 
