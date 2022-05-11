@@ -40,9 +40,9 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        Category::Create($request->all());
-
-        return redirect()->route('categorias.index')->with('status', 'Se ha creado una categoria');  
+        Category::create($request->all()); 
+        
+        return redirect()->route('categorias.index')->with('status','se ha creado una categoria');
     }
 
     /**
