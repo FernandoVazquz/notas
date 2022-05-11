@@ -39,9 +39,10 @@ class NotaController extends Controller
     {
         $categories = Category::where('category_status',true)->get();
 
-        return Inertia::render('Notas/Create',[
-             'categories' => $categories
-         ]);    }
+       return Inertia::render('Notas/Create',[
+            'categories' => $categories
+        ]);    
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -78,15 +79,15 @@ class NotaController extends Controller
     public function show($id)
     {
         $nota = DB::table('notas')
-        ->join('categories', 'notas.categories_id','=','categories.id')
-         ->where('notas.id',$id)
-        ->where('users_id',Auth::id())
-        ->select('notas.*','category_name')
-        ->first();
+            ->join('categories', 'notas.categories_id','=','categories.id')
+             ->where('notas.id',$id)
+            ->where('users_id',Auth::id())
+            ->select('notas.*','category_name')
+            ->first();
 
-        return Inertia::render('Notas/Show', [
-            'nota' => $nota
-        ]); 
+            return Inertia::render('Notas/Show', [
+                'nota' => $nota
+            ]); 
     }
 
     /**
@@ -101,7 +102,7 @@ class NotaController extends Controller
         $categories = Category::where('category_status',true)->get();
 
         return Inertia::render('Notas/Edit', [
-            'nota' => $nota,
+            'nota' =>  $nota,
             'categories' => $categories,
         ]); 
     }

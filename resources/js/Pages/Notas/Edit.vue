@@ -31,7 +31,7 @@
                                 rows="8"
                             ></textarea>
 
-                            <label class="block font-medium text-sm text-gray-700">
+                             <label class="block font-medium text-sm text-gray-700">
                                 Categoría
                             </label>
 
