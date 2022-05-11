@@ -27,6 +27,7 @@ class NotaController extends Controller
 
             return Inertia::render('Notas/Index', [
                 'notas' => $notas
+            ]);
     }
 
     /**
