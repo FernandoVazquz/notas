@@ -26,7 +26,7 @@
                                     Noticias
                                 </jet-nav-link>
                                 <jet-nav-link :href="route('categorias.index')" :active="route().current('categorias.*')">
-                                    Categorias
+                                    Categorías
                                 </jet-nav-link>
                             </div>
                         </div>

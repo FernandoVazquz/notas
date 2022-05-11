@@ -38,10 +38,9 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($id)
+    public function store(Request $request)
     {
         Category::create($request->all()); 
-        
         return redirect()->route('categorias.index')->with('status','se ha creado una categoria');
     }
 
@@ -60,16 +59,15 @@ class CategoryController extends Controller
         ]);
     }
 
-
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit( $id)
+    public function edit($id)
     {
-        $category =  Category::findOrFail($id);
+         $category =  Category::findOrFail($id);
 
          return Inertia::render('Categorias/Edit', [
             'category' => $category
