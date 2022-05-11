@@ -31,4 +31,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::resource('noticias', NotaController::class);
-Route::resource('categorias', CategoryController::class);
+Route::resource('categorias', CategoryController::class); 

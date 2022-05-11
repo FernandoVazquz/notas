@@ -13,7 +13,7 @@
                     <div class="shadow overflow-hidden sm:rounded-md">
                         <div class="px-4 py-5 bg-white sm:p-6">
                             <label class="block font-medium text-sm text-gray-700">
-                                Categoria
+                                Categoría
                             </label>
 
                             <input type="text" v-model="form.category_name" class="form-input w-full rounded-md shadow-sm">
@@ -28,16 +28,13 @@
                             </select>
 
                          </div>
-
                           <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
-                            
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">
                                 Aceptar
                             </button>
-
                           </div>
-						
-						
+
+
                     </div>
                     </form>
             </div>
@@ -49,7 +46,6 @@
 <script>
     import { defineComponent } from 'vue'
     import AppLayout from '@/Layouts/AppLayout.vue'
-
     export default defineComponent({
         components: {
             AppLayout,
@@ -70,6 +66,5 @@
                 this.$inertia.put(this.route('categorias.update', this.category.id), this.form)
             },
         }
-
     })
-</script>
+</script> 

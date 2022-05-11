@@ -6,7 +6,7 @@
             </h2>
         </template>
 
-        
+
     <div>
         <div class="max-w-6xl mx-auto py-10 sm:px-6 lg:px-8">
             <div class="block mb-8">
@@ -24,7 +24,7 @@
                         <thead>
                             <tr>
                                 <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Categoria
+                                    Categoría
 								</th>
                                 <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Estatus
@@ -32,18 +32,14 @@
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
-
                             <tr v-for="categoria in categorias" :key="categoria.id">
-
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                     {{categoria.category_name}}
                                 </td>
-
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                     <span v-if="categoria.category_status == 1">Enabled</span>
                                     <span v-else>Disabled</span>
                                 </td>
-
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                     <inertia-link :href="route('categorias.show',categoria.id)" class="text-blue-600 hover:text-blue-900 mb-2 mr-2">
                                         Ver
@@ -59,14 +55,13 @@
 
         </div>
     </div>
-        
+
     </app-layout>
 </template>
 
 <script>
     import { defineComponent } from 'vue'
     import AppLayout from '@/Layouts/AppLayout.vue'
-
     export default defineComponent({
         components: {
             AppLayout,

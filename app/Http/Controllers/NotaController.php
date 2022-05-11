@@ -41,7 +41,7 @@ class NotaController extends Controller
 
        return Inertia::render('Notas/Create',[
             'categories' => $categories
-        ]);    
+        ]);   
     }
 
     /**
@@ -100,11 +100,11 @@ class NotaController extends Controller
     {
         $nota = Nota::where('id', $id)->where('users_id', Auth::id())->first();
         $categories = Category::where('category_status',true)->get();
-
+        
         return Inertia::render('Notas/Edit', [
             'nota' =>  $nota,
             'categories' => $categories,
-        ]); 
+        ]);
     }
 
     /**
