@@ -18,7 +18,7 @@ class NotaController extends Controller
      */
     public function index()
     {
-        
+
         $notas = DB::table('notas')
             ->join('categories', 'notas.categories_id','=','categories.id')
             ->where('users_id',Auth::id())
@@ -60,12 +60,11 @@ class NotaController extends Controller
           'contenido' => 'required',
           'categories_id' => 'required',
       ]);
-    
       $nota = new Nota;
       $nota->titulo = $request->titulo;
       $nota->contenido = $request->contenido;
       $nota->categories_id = $request->categories_id;
-      $nota->users_id = Auth::id(); //id del usuario que este conectao
+      $nota->users_id = Auth::id(); 
       $nota->save();
 
        return redirect()->route('noticias.index')->with('status','se ha creado una noiticia');;
@@ -82,7 +81,7 @@ class NotaController extends Controller
     {
          $nota = DB::table('notas')
             ->join('categories', 'notas.categories_id','=','categories.id')
-             ->where('notas.id',$id)
+            ->where('notas.id',$id)
             ->where('users_id',Auth::id())
             ->select('notas.*','category_name')
             ->first();

@@ -2,50 +2,29 @@
     <app-layout title="Dashboard">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Ver
+                Ver noticia
             </h2>
         </template>
 
-        <div>
-        <div class="max-w-6xl mx-auto py-10 sm:px-6 lg:px-8">
-            <div class="block mb-8">
-                <inertia-link :href="route('noticias.edit',nota.id)"
-                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mb-8 rounded-md"
-                    >
+        <div class="py-12">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+
+                    <inertia-link :href="route('noticias.edit', nota.id)">
                         Editar
-                </inertia-link>
-            </div>
-            <div class="flex flex-col">
-                <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                        <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg p-10">
-						
-                            <div class="min-w-full divide-y divide-gray-200 w-full">
+                    </inertia-link>
+                    <hr>
 
-                            <b>Titulo</b>
-                            <p>{{ nota.titulo }}</p>
+                    <p>Titulo</p>
+                        <p>{{ nota.titulo }}</p>
+                    <p>Contenido</p>
+                        <p>{{ nota.contenido }}</p>
 
-                            <b>Contenido</b>
-                            <p>{{ nota.contenido }}</p>
-
-                            <b>Categoría</b>
-                            <p>{{ nota.category_name }}</p>
-
-                            </div>
-                            
-                        </div>
-                    </div>
+                    <p>Categoria</p>
+                        <p>{{ nota.category_name }}</p>
                 </div>
             </div>
-            <div class="block mt-8">
-                 <inertia-link :href="route('noticias.index')"
-                        class="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded"
-                    >
-                        Notas
-                </inertia-link>
-            </div>
         </div>
-    </div>
     </app-layout>
 </template>
 
@@ -57,7 +36,7 @@
             AppLayout,
         },
         props: {
-            nota: Object
+            nota: Object,
         }
     })
 </script>
