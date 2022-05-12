@@ -67,11 +67,11 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $category =  Category::findOrFail($id);
+         $category =  Category::findOrFail($id);
 
-        return Inertia::render('Categorias/Edit', [
-           'category' => $category
-       ]);
+         return Inertia::render('Categorias/Edit', [
+            'category' => $category
+        ]);
     }
 
     /**
