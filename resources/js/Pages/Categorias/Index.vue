@@ -6,7 +6,7 @@
             </h2>
         </template>
 
-
+        
     <div>
         <div class="max-w-6xl mx-auto py-10 sm:px-6 lg:px-8">
             <div class="block mb-8">
@@ -44,7 +44,7 @@
                                     <inertia-link :href="route('categorias.show',categoria.id)" class="text-blue-600 hover:text-blue-900 mb-2 mr-2">
                                         Ver
                                     </inertia-link>
-                                </td>
+                                </td> 
                             </tr>
                         </tbody>
                     </table>
@@ -55,7 +55,7 @@
 
         </div>
     </div>
-
+        
     </app-layout>
 </template>
 

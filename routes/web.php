@@ -6,6 +6,7 @@ use Inertia\Inertia;
 use App\Http\Controllers\NotaController;
 use App\Http\Controllers\CategoryController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,7 +28,7 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    
+
     $news_by_category = DB::table('notas')
         ->join('categories', 'notas.categories_id', "=", 'categories.id')
         ->where('users_id', Auth::id())
@@ -44,4 +45,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::resource('noticias', NotaController::class);
-Route::resource('categorias', CategoryController::class); 
+Route::resource('categorias', CategoryController::class);
