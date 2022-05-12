@@ -14,4 +14,5 @@ class Nota extends Model
         'contenido',
         'categories_id'
     ];
+
 }

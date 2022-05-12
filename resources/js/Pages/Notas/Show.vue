@@ -19,8 +19,9 @@
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                         <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg p-10">
-
+						
                             <div class="min-w-full divide-y divide-gray-200 w-full">
+
                             <b>Titulo</b>
                             <p>{{ nota.titulo }}</p>
 
@@ -29,9 +30,9 @@
 
                             <b>Categoría</b>
                             <p>{{ nota.category_name }}</p>
-                            
-                            </div>
 
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -51,7 +52,6 @@
 <script>
     import { defineComponent } from 'vue'
     import AppLayout from '@/Layouts/AppLayout.vue'
-
     export default defineComponent({
         components: {
             AppLayout,
@@ -59,6 +59,5 @@
         props: {
             nota: Object
         }
-
     })
 </script>

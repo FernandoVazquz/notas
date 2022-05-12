@@ -42,16 +42,13 @@
                                 </option>
                             </select>
 
-                        </div>
-
-                        <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
-                            
+                         </div>
+                          <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
                             <button
                                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md"
                             >Aceptar</button>
                             <button @click.prevent="destroy" class="float-right bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md">Eliminar</button>
-                          
-                        </div>
+                          </div>
 						
 						
                     </div>
@@ -65,7 +62,6 @@
 <script>
     import { defineComponent } from 'vue'
     import AppLayout from '@/Layouts/AppLayout.vue'
-
     export default defineComponent({
         components: {
             AppLayout,
@@ -91,9 +87,7 @@
                 if(confirm('¿Esta seguro que desesa eliminar esta nota?')){
                     this.$inertia.delete(this.route('noticias.destroy', this.nota.id))
                 }
-
             },
         }
-
     })
 </script>
