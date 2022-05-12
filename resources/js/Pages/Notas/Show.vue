@@ -15,13 +15,15 @@
                     </inertia-link>
                     <hr>
 
-                    <p>Titulo</p>
-                        <p>{{ nota.titulo }}</p>
-                    <p>Contenido</p>
-                        <p>{{ nota.contenido }}</p>
+                    <b>Titulo</b>
+                    <p>{{ nota.titulo }}</p>
 
-                    <p>Categoria</p>
-                        <p>{{ nota.category_name }}</p>
+                    <b>Contenido</b>
+                    <p>{{ nota.contenido }}</p>
+
+                    <b>Categoría</b>
+                    <p>{{ nota.category_name }}</p>
+                    
                 </div>
             </div>
         </div>
