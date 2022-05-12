@@ -22,13 +22,13 @@
 						
                             <div class="min-w-full divide-y divide-gray-200 w-full">
 
-                            <b>Titulo</b>
+                            <p>Titulo</p>
                             <p>{{ nota.titulo }}</p>
 
-                            <b>Contenido</b>
+                            <p>Contenido</p>
                             <p>{{ nota.contenido }}</p>
 
-                            <b>Categoría</b>
+                            <p>Categoría</p>
                             <p>{{ nota.category_name }}</p>
 
                             </div>

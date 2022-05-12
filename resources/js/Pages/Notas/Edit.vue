@@ -35,7 +35,7 @@
                                 Categoría
                             </label>
 
-                            <select v-model="form.categories_id" class="form-input w-full rounded-md shadow-sm">
+                             <select v-model="form.categories_id" class="form-input w-full rounded-md shadow-sm">
                                 <option value="">Seleccionar</option>
                                 <option :value="category.id" v-for="category in categories" :key="category.id">
                                     {{category.category_name}}
