@@ -34,7 +34,7 @@
                                     ></textarea>
 
                                     <label class="block font-medium text-sm text-gray-700">
-                                        Categoría
+                                        Categorías
                                     </label>
 
                                     <select v-model="form.categories_id" class="form-input w-full rounded-md shadow-sm">
